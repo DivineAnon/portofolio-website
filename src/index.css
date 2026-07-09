@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sora: "Sora", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-cyber-black: #050505;
+  --color-cyber-navy: #09111f;
+  --color-cyber-blue: #2563eb;
+  --color-cyber-cyan: #06b6d4;
+
+  --color-theme-accent: var(--theme-accent);
+  --color-theme-secondary: var(--theme-secondary);
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-blob1: var(--theme-blob-1);
+  --color-theme-blob2: var(--theme-blob-2);
+  --color-theme-blob3: var(--theme-blob-3);
+}
+
+:root {
+  --theme-bg: #050505;
+  --theme-accent: #06b6d4;
+  --theme-accent-hover: #22d3ee;
+  --theme-secondary: #c084fc;
+  --theme-blob-1: rgba(37, 99, 235, 0.2);
+  --theme-blob-2: rgba(147, 51, 234, 0.2);
+  --theme-blob-3: rgba(6, 182, 212, 0.1);
+}
+
+.theme-cyberpunk {
+  --theme-bg: #050505;
+  --theme-accent: #06b6d4;
+  --theme-accent-hover: #22d3ee;
+  --theme-secondary: #c084fc;
+  --theme-blob-1: rgba(37, 99, 235, 0.2);
+  --theme-blob-2: rgba(147, 51, 234, 0.2);
+  --theme-blob-3: rgba(6, 182, 212, 0.1);
+}
+
+.theme-navy {
+  --theme-bg: #060b19;
+  --theme-accent: #3b82f6;
+  --theme-accent-hover: #60a5fa;
+  --theme-secondary: #ec4899;
+  --theme-blob-1: rgba(29, 78, 216, 0.25);
+  --theme-blob-2: rgba(76, 29, 149, 0.25);
+  --theme-blob-3: rgba(59, 130, 246, 0.15);
+}
+
+.theme-green {
+  --theme-bg: #020703;
+  --theme-accent: #10b981;
+  --theme-accent-hover: #34d399;
+  --theme-secondary: #84cc16;
+  --theme-blob-1: rgba(4, 120, 87, 0.2);
+  --theme-blob-2: rgba(63, 98, 18, 0.2);
+  --theme-blob-3: rgba(16, 185, 129, 0.1);
+}
+
+/* Custom scrollbar and utilities */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+body {
+  background-color: var(--theme-bg, #050505);
+  transition: background-color 0.5s ease;
+  color: #f8fafc;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transform: translateY(-2px);
+}
+
+/* Custom styles for glowing details */
+.glow-blur {
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+/* Coding puzzle and neon text */
+.neon-text-blue {
+  color: #3b82f6;
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+.neon-text-cyan {
+  color: #22d3ee;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+}
+.neon-text-purple {
+  color: #c084fc;
+  text-shadow: 0 0 8px rgba(192, 132, 252, 0.5);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a5f3fc 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Badge Unlock High-Impact Glow Keyframes */
+@keyframes badge-unlock-glow {
+  0%, 100% {
+    border-color: rgba(6, 182, 212, 0.2);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+    transform: scale(1);
+  }
+  25% {
+    border-color: #06b6d4;
+    box-shadow: 0 0 45px rgba(6, 182, 212, 0.8);
+    transform: scale(1.02);
+  }
+  50% {
+    border-color: #f59e0b;
+    box-shadow: 0 0 55px rgba(245, 158, 11, 0.85);
+    transform: scale(1.01);
+  }
+  75% {
+    border-color: #10b981;
+    box-shadow: 0 0 45px rgba(16, 185, 129, 0.8);
+    transform: scale(1.025);
+  }
+}
+
+.badge-section-highlight {
+  animation: badge-unlock-glow 2.5s ease-in-out infinite;
+  position: relative;
+  z-index: 20;
+}
+
